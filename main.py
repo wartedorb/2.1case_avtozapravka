@@ -9,6 +9,7 @@ Developers:
 
 """
 import random
+from datetime import time
 
 with open('azs.txt', 'r', encoding='UTF-8') as F_in:
     all_lines = F_in.readlines()
@@ -28,7 +29,26 @@ with open('input.txt', 'r', encoding='UTF-8') as F_in2:
 cars_info = dict()
 for line in all_lines_2:
     elements_in_line_2 = line.split()
-    cars_info[elements_in_line_2[0]] = elements_in_line_2[1:]  # {'00:01': ['10', 'АИ-80'], '00:04': ['45', 'АИ-95'], '00:12': ['40', 'АИ-92'],
+    cars_info[elements_in_line_2[0]] = elements_in_line_2[1:]  # {'00:01': ['10', 'АИ-80'], '00:04': ['45', 'АИ-95'], '00:12': ['40', 'АИ-92'],...
+
+
+def time_to(x):
+    """What time does it take to fuel up a car"""
+    x = int(x)
+    if x % 10 != 0:
+        x2 = x // 10 + 1
+    else:
+        x2 = x // 10
+    r = random.randint(-1, 1)
+    if x2 + r != 0:
+        return x2 + r
+    else:
+        return x2
+
+
+
+
+
 
 
 
