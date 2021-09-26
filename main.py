@@ -12,7 +12,7 @@ import datetime
 tanker_max = {}
 tanker_fuel = {}
 tankers_queue = {}
-with open('azs.txt', 'r') as F_azs:
+with open('azs.txt', 'r', encoding='UTF-8') as F_azs:
     for element in F_azs.readlines():
         s = element.split()
         tanker_max[s[0]] = int(s[1])  # {'1': 3, '2': '2', 3': 4}
@@ -29,7 +29,7 @@ dict_types_sum = dict().fromkeys(list_types, 0)
 
 car_type = {}
 car_liter = {}
-with open('input.txt', 'r') as F_in:
+with open('input.txt', 'r', encoding='UTF-8') as F_in:
     for element in F_in.readlines():
         s = element.split()
         car_liter[s[0]] = int(s[1])  # {'00:01': 10, '00:04': 45, '00:12': 40, '00:41': 30,
